@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HTML/CSS/JAVASCRIPT - SINGLE PAGE APP [Boolzap]</title>
+
+    <!-- Google Fonts link -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <!-- Fontawesome Icons link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/00-ico.png">
+  </head>
+  <body>
+
+    <div class="wrapper flx centered">
+
+      <!-- APP CONTAINER -->
+      <div id="app" class="container flx">
+        <!-- LEFT Side-->
+        <div class="left-sd">
+          <!-- User-bar: data & links -->
+          <section class="usr-bar pdd-15 flx">
+            <!-- user avatar -->
+            <div class="flx al-cntr kern16">
+              <img src="img/avatar_0.jpg" class="rounded" alt="user">
+            </div>
+            <!-- / user avatar -->
+            <!-- user links -->
+            <nav class="flx al-cntr kern32 txt-1x4 txt-col-gray">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </nav>
+            <!-- / user links -->
+          </section>
+          <!-- / User-bar links -->
+          <!-- Alerts section -->
+          <section class="alerts pdd-15 kern32 flx">
+            <div>
+              <i class="fas fa-bell-slash rounded txt-1x4 pdd-15"></i>
+            </div>
+            <div>
+              <div class="txt-1x1">Ricevi notifiche di nuovi messaggi</div>
+              <div class="txt-col-gray">Attiva notifiche desktop</div>
+            </div>
+          </section>
+          <!-- / Alerts section -->
+          <!-- Search chat -->
+          <section class="inp-cont flx centered">
+            <div class="inp-box flx centered kern16">
+              <i class="fas fa-search"></i>
+              <input placeholder="Cerca o inizia una nuova chat">
+            </div>
+          </section>
+          <!-- / Search chat -->
+          <!-- User list -->
+          <section class="usr-list ofw-y">
+            <!-- user in list -->
+            <div class="usr-list-row kern16 flx">
+              <div class="usr-avatar">
+                <img :src="'img/avatar' + elm.avatar + '.jpg'" class="rounded" alt="user">
+              </div>
+              <div class="usr-data flx">
+                <div class="flx">
+                 
+              </div>
+            </div>
+            <!-- / user in list -->
+          </section>
+          <!-- / User list -->
+        </div>
+        <!-- / LEFT Side -->
+        <!-- RIGHT Side -->
+        <div class="right-sd">
+          <!-- User-bar links -->
+          <section class="usr-bar pdd-15 flx">
+            <!-- user avatar -->
+            <div class="flx al-cntr kern16">
+              <img :src="'img/avatar' + contacts[selectedChat].avatar + '.jpg'" alt="user">
+              <div>
+                <div class="txt-0x9 txt-col-gray">
+                  Ultimo accesso oggi alle:
+                </div>
+              </div>
+            </div>
+            <!-- / user avatar -->
+            <!-- user links -->
+            <nav class="flx al-cntr kern32 txt-1x4 txt-col-gray">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </nav>
+            <!-- / user links -->
+          </section>
+          <!-- / User-bar: data & links -->
+          <!-- Main chat area -->
+          <section class="main-discuss ofw-y">
+            <div class="main-discuss-cont">
+              
+            </div>
+          </section>
+          <!-- / Main chat area -->
+          <!-- Bottom bar -->
+          <section class="inp-cont flx al-cntr kern16 txt-1x6">
+            
+            <!-- write message -->
+            <div class="inp-box pdd-15 flx centerd" >
+              <input class="txt-0x7"  placeholder="Scrivi un messaggio">
+            </div>
+            <!-- / write message -->
+            <i class="submit fas"></i>
+          </section>
+          <!-- / Bottom bar -->
+        </div>
+        <!-- / RIGHT Side -->
+      </div>
+      <!-- / APP CONTAINER -->
+
+    </div>
+
+     <!-- VUE JS -->
+     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <script src="js/script.js" charset="utf-8"></script>
+
+  </body>
+</html>
