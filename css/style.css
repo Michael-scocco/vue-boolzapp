@@ -1,258 +1,63 @@
-/* RESET Css */
-* {
-    box-sizing: border-box;
-    margin: 0;
+*{
+    margin:0;
     padding: 0;
-  }
-  
-  body {
-    font-family: 'Noto Sans';
-    font-size: 13px;
-    line-height: 1.8em;
-  }
-  /* / RESET Css */
-  
-  /* UTILITY CSS */
-  /* Display (visual & position) */
-  .flx {
+    box-sizing: border-box;
+}
+body{
+    background-color: lightgray;
+    
+}
+#app{
+    background-color: lightgreen;
+    height: 100px;
+    padding: 20px;
+}
+
+.container{
+    width: 1200px;
+    margin: auto;
+    background-color: lightsalmon;
+    height: 95vh;
+}
+
+header{
     display: flex;
-  }
-  
-  .al-cntr {
+}
+.nome-utente{
+    width: 50%;
+    border-right: 1px solid black;
+    display: flex;
     align-items: center;
-  }
-  
-  .centered {
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .ofw-y {
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-  
-  .rounded{
-    border-radius: 50%;
-  }
-  /* / Display (visual & position) */
-  
-  /* Spaces (margin & padding) */
-  .kern16 > * {
-    margin-right: 16px;
-  }
-  
-  .kern32 > * {
-    margin-right: 32px;
-  }
-  
-  .pdd-15 {
-    padding: 15px;
-  }
-  /* / Spaces (margin & padding) */
-  
-  /* Text proprieties */
-  .txt-1x1 {
-    font-size: 1.1em;
-  }
-  
-  .txt-1x4 {
-    font-size: 1.4em;
-  }
-  
-  .txt-1x6 {
-    font-size: 1.6em;
-  }
-  
-  .txt-0x9 {
-    font-size: 0.9em;
-  }
-  
-  .txt-0x7 {
-    font-size: 0.7em;
-  }
-  
-  .txt-col-gray {
-    color: #A0A0A0;
-  }
-  /* / Text proprieties */
-  
-  /* Scrollbars */
-  .ofw-y::-webkit-scrollbar {
-    width: 5px;
-  }
-  
-  .ofw-y::-webkit-scrollbar-track {
-    background: #FFF;
-  }
-  
-  .ofw-y::-webkit-scrollbar-thumb {
-    background: #CCC;
-  }
-  /* / Scrollbars */
-  
-  /* Common styles */
-  .inp-box, .inp-box input, .usr-data,
-  .main-discuss-cont, .main-discuss-col {
-    width: 100%;
-  }
-  
-  .msg-box:after, .msg-box::before, .msg-hour,
-  .msg-box > i.fas, .msg-options {
-    position: absolute;
-  }
-  
-  .usr-list, i.fas, i.far,
-  .msg-options, .fa-paper-plane:hover {
-    cursor: pointer;
-  }
-  /* / Common styles */
-  
-  /* Common sections */
-  .usr-bar {
-    height: 70px;
-    background: #EAEAEA;
+    padding: 10px;
     justify-content: space-between;
-  }
-  
-  .usr-bar img {
-    height: 42px;
-  }
-  
-  .inp-cont {
-    padding: 5px 15px;
-    background-color: #F6F6F6;
-  }
-  
-  .inp-cont i {
-    color: #919191;
-  }
-  
-  .inp-box {
-    background-color: #FFF;
-    border-radius: 50px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.03);
-    transition: 0.3s;
-  }
-  
-  .inp-box input {
-    font-family: inherit;
-    border: 0;
-  }
-  
-  .inp-box input:focus {
-    outline: none;
-  }
-  /* / Common sections */
-  /* / UTILITY CSS */
-  
-  /* PAGE MAIN-CONTAINERS */
-  .wrapper {
-    width: 100vw;
-    height: 100vh;
-    min-width: 950px;
-    background: linear-gradient(#009688 16%, #DADBD3 16%);
-  }
-  
-  .container {
-    width: 90%;
-    height: 95%;
-    background: #FFF;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-  }
-  /* / PAGE MAIN-CONTAINERS */
-  
-  /* LEFT Side */
-  .left-sd {
-    width: 30%;
-    border-right: 1px solid #C8C8C8;
-  }
-  
-  /* Alerts section */
-  .alerts {
-    min-height: 80px;
-    background-color: #8EDAFC;
-  }
-  
-  .alerts .fas.rounded{
-    color: #8EDAFC;
-    background-color: #FFF;
-  }
-  /* / Alerts section */
-  
-  /* Search chat */
-  .left-sd .inp-cont {
-    min-height: 50px;
-  }
-  
-  .left-sd .inp-box {
-    padding: 8px 16px;
-  }
-  /* / Search chat */
-  
-  /* User list */
-  .usr-list {
-    max-height: calc(100% - 200px);
-  }
-  
-  .usr-list-row:hover {
-    background-color: #F2F2F2;
-  }
-  
-  .usr-avatar {
-    padding: 10px 5px 5px 15px;
-  }
-  
-  .usr-avatar img {
+}
+.utente{
+    align-items: center;
+}
+.utente > img{
+    align-items: center;
+}
+
+.nome-utente,
+.utente-parlante{
+    background-color: gray;
+    height: 80px;
+}
+
+.utente > img{
+    width: 60px;
     height: 60px;
-  }
-  
-  .usr-data {
-    flex-direction: column;
-    justify-content: center;
-    border-bottom: 1px solid #F2F2F2;
-  }
-  
-  .usr-data > * {
-    justify-content: space-between;
-  }
-  /* / User list */
-  /* / LEFT Side */
-  
-  /* RIGHT Side */
-  .right-sd {
-    width: calc(100% - 30%);
-  }
-  
-  /* Main chat area */
-  .main-discuss {
-    height: calc(100% - 140px);
-    background-color: #E5DDD5;
-    background-image: url('../img/00-bg.png');
-  }
-  
-  .main-discuss-cont {
-    min-height: 100%;
-    padding: 15px 80px;
-    background-color: rgba(229, 221, 213, 0.92);
-  }
-  
-  /* Bottom bar */
-  .right-sd .inp-cont {
-    min-height: 70px;
-  }
-  
-  .inp-box-focus {
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-  }
-  
-  .submit{
-    min-width: 18px;
-  }
-  
-  .submit.fa-paper-plane:hover {
-    color : #009588;
-  }
-  /* / Bottom bar */
-  /* / RIGHT Side */
+    border-radius: 50%;
+}
+.utente > span{
+    font-size: 20px;
+}
+.icone-nome-utente > i{
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+
+.utente-parlante{
+    width: 100%;
+}
