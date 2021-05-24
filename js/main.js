@@ -3,14 +3,13 @@ const app = new Vue({
     // ELEMENTO //
     el : '#app',
 
+
     data:{
         immagineUtente: './img/avatar_io.jpg',
         nomeUtente: 'Nome Utente',
-        immagineUtenteSelezionato: './img/avatar_1.jpg',
-        nomeUtenteSelezionato: 'Michele',
-        oraDiAccesso: 'Ultimo accesso oggi alle',
+        messaggioUtente: '',
 
-        
+        contattoCliccato: 0,
         contatti: [
             {
                 name: 'Michele',
@@ -95,10 +94,42 @@ const app = new Vue({
                     }
                 ],
             },
-        ]
+        ],
+  
+    }, //data
+    methods :{
+        contattoSelezionato: function(index){
+            this.contattoCliccato = index;
+            console.log(index);
+        },
+
+        inserireMessaggi: function(){
+            nuovoMessaggio = {};//puschia qui
+            //devo puschiare un nuovo oggetto con
+            // data, text, status
+            nuovoMessaggio.date = data;
+            nuovoMessaggio.text = this.messaggioUtente;
+            nuovoMessaggio.status = 'messaggi';//come richiamare le classi css
+            this.contatti[this.contattoCliccato].messages.push(nuovoMessaggio);
+            this.messaggioUtente = '';
+            
+        }
     }
 
     });
+    const data = new Date();
+
+data.setDate(24);
+
+console.log(data.getDate());
+// expected output: 24
+
+data.setDate(32);
+// Only 31 days in August!
+
+console.log(data.getDate());
+// expected output: 1
+
 /*
     Istruzioni:
 Milestone 1:

@@ -6,21 +6,16 @@
 /*************
 INIZIO SFONDO 
 *************/
-body{
-    background-color: lightgray;
-    
-}
 #app{
-    background-color: lightgreen;
-    height: 100px;
-    padding: 20px;
+    height: 100vh;
+    padding-top: 20px;
+    background: linear-gradient(180deg, #009688 13%, #d8dbd5 13%);
 }
 
 .container{
-    width: 1200px;
-    margin: auto;
-    background-color: lightsalmon;
-    height: 95vh;
+    width: 1300px;
+    margin: 26px auto;
+    height: 800px;
 }
 /*************
 FINE SFONDO 
@@ -31,6 +26,7 @@ INIZIO HEADER DI SINISTRA
 ************************/
 header{
     display: flex;
+    height: 80px;
 }
 
 .nome-utente,
@@ -101,6 +97,7 @@ INIZIO MAIN CENTRALE
 ************************/
 .struttura-centrale{
     display: flex;
+    height: calc(800px - 80px);
 }
 /************************
 FINE MAIN CENTRALE
@@ -147,9 +144,33 @@ INIZIO MAIN DI SINISTRA
     margin-left: 20px;
 }
 
+.listaUtenti{
+    width: 100%;
+    list-style: none;
+    overflow: auto;
+    overflow-y: scroll;
+}
 
+.listaUtenti > li{
+    display: flex;
+    position: relative;
+}
+.listaUtenti > li > img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
 
-
+.opacita{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    width: 19.2%;
+    height: 100%;
+    border-radius: 50%;
+}
 
 
 /************************
@@ -157,6 +178,47 @@ INIZIO MAIN DI DESTRA
 ************************/
 .main-destra{
     width: 100%;
-    min-height: 100px;
+    background-image: url(../img/mine.jpg);
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+
+.barra-messaggi{
+    height: 100px;
+    display: flex;
+    background-color: lavenderblush;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.barra-messaggi > input{
+    width: 80%;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 25px;
+
+}
+.barra-messaggi > i{
+    font-size: 35px;
+}
+
+#lista-messaggi{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.messaggi{
+    align-self: flex-start;
+    background-color: lawngreen;
+    text-align: right;
+    padding: 20px;
+    width: 50%;
+}
+
+.messaggi.ricevuti{
+    align-self: flex-end;
     background-color: white;
+    text-align: left;
 }

@@ -38,13 +38,13 @@
           <div class="nome-utente-selezionato">
 
             <div class="utente-selezionato">
-              <img v-bind:src="immagineUtenteSelezionato"  alt="avatar selezionato"/>
+              <img v-bind:src=" './img' + '/avatar' + contatti[contattoCliccato].avatar + '.jpg'"  alt="avatar selezionato"/>
 
               <div class="info-utente-selezionato">
-                <span>{{nomeUtenteSelezionato}}</span>
-                <p>{{oraDiAccesso}}</p>
+                <span>{{contatti[contattoCliccato].name}}</span>
+                <p>Ultimo accesso oggi alle: {{contatti[contattoCliccato].messages[contatti[contattoCliccato].messages.length-1].date}}</p>
               </div>
-
+              
             </div>
 
             <div class="icone-nome-utente">
@@ -78,13 +78,33 @@
             </div><!-- /cerca-inizia-chat -->
 
             <ul class="listaUtenti">
-              <li v-for="contatto in contatti">
-                <img v-bind:src="contatti[avatar, name]" alt="immagini utenti">
+              <li v-for="(contatto, index) in contatti" @click="contattoSelezionato(index)">
+
+                <img v-bind:src=" './img' + '/avatar' + contatto.avatar + '.jpg' " alt="immagini utenti">
+                <h2>{{contatto.name}}</h2>
+                <div class="opacita">
+
+                </div>
               </li>
             </ul>
           </div><!-- /main-sinistra -->
 
+          <!-- inizia main-destra -->
           <div class="main-destra">
+            <ul id="lista-messaggi">
+              <li class="messaggi" :class="(messaggio.status == 'received') ? 'ricevuti' : '' " v-for="messaggio in contatti[contattoCliccato].messages">
+                <div>
+                    <p>{{messaggio.text}}</p>
+                    <span>{{messaggio.date}}</span>
+                </div>
+              </li>
+            </ul>
+            <div class="barra-messaggi">
+              <i class="far fa-smile"></i>
+              <input v-model="messaggioUtente" @keyup.enter='inserireMessaggi' type="text" placeholder="Scrivi un messaggio">
+              <i class="fas fa-microphone"></i>
+            </div>
+            
 
           </div>
           <!-- /FINE MAIN CENTRALE -->
