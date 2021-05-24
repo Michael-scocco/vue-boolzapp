@@ -17,6 +17,7 @@
     <div id="app">
       <div class="container">
         <header>
+          <!-- INIZIO HEADER DI SINISTRA -->
           <div class="nome-utente">
 
             <div class="utente">
@@ -27,15 +28,67 @@
             <div class="icone-nome-utente">
               <i class="fas fa-circle-notch"></i>
               <i class="fas fa-comment-alt"></i>
-              <i class="fas fa-ellipsis-v" @click="getRandom"></i>
+              <i class="fas fa-ellipsis-v"></i>
             </div>
            
-          </div> <!-- nome-utente -->
+          </div> <!-- / nome-utente -->
+          <!-- / FINE HEADER DI SINISTRA -->
 
-          <div class="utente-parlante">
+          <!-- INIZIO HEADER DI DESTRA -->
+          <div class="nome-utente-selezionato">
+
+            <div class="utente-selezionato">
+              <img v-bind:src="immagineUtenteSelezionato"  alt="avatar selezionato"/>
+
+              <div class="info-utente-selezionato">
+                <span>{{nomeUtenteSelezionato}}</span>
+                <p>{{oraDiAccesso}}</p>
+              </div>
+
+            </div>
+
+            <div class="icone-nome-utente">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
 
           </div>
+          <!-- /FINE HEADER DI DESTRA -->
         </header>
+
+        <main class="struttura-centrale">
+          <!-- INIZIO MAIN CENTRALE -->
+          <div class="main-sinistra">
+
+            <div class="ricevi-notifiche">
+
+              <i class="fas fa-bell-slash"></i>
+
+              <div class="accedi-notifiche">
+                <p>Ricevi notifiche di nuovi messaggi</p>
+                <a href="#">Attiva notifiche desktop</a>
+              </div>
+
+            </div><!-- /ricevi-notifiche -->
+
+            <div class="cerca-inizia-chat">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Cerca ho inizia una nuova chat">
+            </div><!-- /cerca-inizia-chat -->
+
+            <ul class="listaUtenti">
+              <li v-for="contatto in contatti">
+                <img v-bind:src="contatti[avatar, name]" alt="immagini utenti">
+              </li>
+            </ul>
+          </div><!-- /main-sinistra -->
+
+          <div class="main-destra">
+
+          </div>
+          <!-- /FINE MAIN CENTRALE -->
+        </main>
 
       </div>
     </div>

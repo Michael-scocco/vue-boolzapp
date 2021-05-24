@@ -32,6 +32,17 @@ INIZIO HEADER DI SINISTRA
 header{
     display: flex;
 }
+
+.nome-utente,
+.nome-utente-selezionato{
+    background-color: gray;
+    height: 80px;
+}
+
+.utente{
+    display: flex;
+    align-items: center;
+}
 .nome-utente{
     width: 50%;
     border-right: 1px solid black;
@@ -40,23 +51,12 @@ header{
     padding: 10px;
     justify-content: space-between;
 }
-.utente{
-    align-items: center;
-}
-.utente > img{
-    align-items: center;
-}
-
-.nome-utente,
-.utente-parlante{
-    background-color: gray;
-    height: 80px;
-}
 
 .utente > img{
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    align-items: center;
 }
 .utente > span{
     font-size: 20px;
@@ -72,6 +72,91 @@ FINE HEADER DI SINISTRA
 /************************
 INIZIO HEADER DI DESTRA
 ************************/
-.utente-parlante{
+.nome-utente-selezionato{
     width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+.utente-selezionato{
+    display: flex;
+    align-items: center;
+}
+.utente-selezionato > img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+info-utente-selezionato{
+    flex-direction: column;
+}
+/************************
+FINE HEADER DI DESTRA
+************************/
+
+/************************
+INIZIO MAIN CENTRALE
+************************/
+.struttura-centrale{
+    display: flex;
+}
+/************************
+FINE MAIN CENTRALE
+************************/
+
+/************************
+INIZIO MAIN DI SINISTRA
+************************/
+.main-sinistra{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-right: 1px solid black;
+    min-height: 100px;
+    background-color: lightslategray;
+   
+}
+.ricevi-notifiche{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: lightskyblue;
+    padding: 10px;
+    
+}
+.ricevi-notifiche > i{
+    color: lightskyblue;
+    background-color: white;
+    padding: 20px;
+    border-radius: 50%;
+    font-size: 25px;
+    margin-right: 15px;
+}
+.cerca-inizia-chat{
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+.cerca-inizia-chat > input{
+    border-style: none;
+    width: 100%;
+    margin-left: 20px;
+}
+
+
+
+
+
+
+/************************
+INIZIO MAIN DI DESTRA
+************************/
+.main-destra{
+    width: 100%;
+    min-height: 100px;
+    background-color: white;
 }

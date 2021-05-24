@@ -6,6 +6,11 @@ const app = new Vue({
     data:{
         immagineUtente: './img/avatar_io.jpg',
         nomeUtente: 'Nome Utente',
+        immagineUtenteSelezionato: './img/avatar_1.jpg',
+        nomeUtenteSelezionato: 'Michele',
+        oraDiAccesso: 'Ultimo accesso oggi alle',
+
+        
         contatti: [
             {
                 name: 'Michele',
@@ -94,3 +99,11 @@ const app = new Vue({
     }
 
     });
+/*
+    Istruzioni:
+Milestone 1:
+Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) 
+assegnando due classi CSS diverse
+Visualizzazione dinamica della lista 
+contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
+*/
