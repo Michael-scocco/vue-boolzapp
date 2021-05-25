@@ -209,16 +209,16 @@ INIZIO MAIN DI DESTRA
     list-style: none;
 }
 
-.messaggi{
+.messaggi-ricevuti{
     align-self: flex-start;
     background-color: lawngreen;
-    text-align: right;
+    text-align: left;
     padding: 20px;
     width: 50%;
 }
 
-.messaggi.ricevuti{
+.messaggi-inviati{
     align-self: flex-end;
     background-color: white;
-    text-align: left;
+    text-align: right;
 }
