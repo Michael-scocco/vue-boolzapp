@@ -107,28 +107,28 @@ const app = new Vue({
             nuovoMessaggio = {};//puschia qui
             //devo puschiare un nuovo oggetto con
             // data, text, status
-            nuovoMessaggio.date = data;
+            nuovoMessaggio.date = dayjs().format('DD/MM/YYYY hh:mm:ss');
             nuovoMessaggio.text = this.messaggioUtente;
-            nuovoMessaggio.status = 'messaggi';//come richiamare le classi css
+            nuovoMessaggio.status = 'messaggi-.messaggi-inviati';//come richiamare le classi css
             this.contatti[this.contattoCliccato].messages.push(nuovoMessaggio);
             this.messaggioUtente = '';
-            
-        }
+
+            setTimeout(() => {
+                nuovoMessaggioPc = {};//puschia qui
+                //devo puschiare un nuovo oggetto con
+                // data, text, status
+                nuovoMessaggioPc.date = dayjs().format('DD/MM/YYYY hh:mm:ss');
+                nuovoMessaggioPc.text = 'ok';
+                nuovoMessaggioPc.status = 'messaggi-ricevuti';//come richiamare le classi css
+                this.contatti[this.contattoCliccato].messages.push(nuovoMessaggioPc);
+            }, 1000);
+        },
+
+
     }
 
     });
-    const data = new Date();
 
-data.setDate(24);
-
-console.log(data.getDate());
-// expected output: 24
-
-data.setDate(32);
-// Only 31 days in August!
-
-console.log(data.getDate());
-// expected output: 1
 
 /*
     Istruzioni:

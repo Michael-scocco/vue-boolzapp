@@ -92,7 +92,7 @@
           <!-- inizia main-destra -->
           <div class="main-destra">
             <ul id="lista-messaggi">
-              <li class="messaggi" :class="(messaggio.status == 'received') ? 'ricevuti' : '' " v-for="messaggio in contatti[contattoCliccato].messages">
+              <li class="messaggi-ricevuti" :class="(messaggio.status == 'received') ? 'received' : '' " v-for="messaggio in contatti[contattoCliccato].messages">
                 <div>
                     <p>{{messaggio.text}}</p>
                     <span>{{messaggio.date}}</span>
@@ -116,6 +116,10 @@
 
      <!-- VUE JS -->
      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+     <!-- LIBRERIA DATA JS -->
+     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+        <script>dayjs().format('DD/MM/YYYY hh:mm:ss')</script>
 
     <script src="js/main.js" charset="utf-8"></script>
 
