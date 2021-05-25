@@ -109,7 +109,7 @@ const app = new Vue({
             // data, text, status
             nuovoMessaggio.date = dayjs().format('DD/MM/YYYY hh:mm:ss');
             nuovoMessaggio.text = this.messaggioUtente;
-            nuovoMessaggio.status = 'messaggi-.messaggi-inviati';//come richiamare le classi css
+            nuovoMessaggio.status = 'messaggi-inviati';//come richiamare le classi css
             this.contatti[this.contattoCliccato].messages.push(nuovoMessaggio);
             this.messaggioUtente = '';
 
@@ -119,7 +119,7 @@ const app = new Vue({
                 // data, text, status
                 nuovoMessaggioPc.date = dayjs().format('DD/MM/YYYY hh:mm:ss');
                 nuovoMessaggioPc.text = 'ok';
-                nuovoMessaggioPc.status = 'messaggi-ricevuti';//come richiamare le classi css
+                nuovoMessaggioPc.status = 'messaggi-rivevuti';//come richiamare le classi css
                 this.contatti[this.contattoCliccato].messages.push(nuovoMessaggioPc);
             }, 1000);
         },

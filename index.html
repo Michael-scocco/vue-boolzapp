@@ -92,7 +92,7 @@
           <!-- inizia main-destra -->
           <div class="main-destra">
             <ul id="lista-messaggi">
-              <li class="messaggi-ricevuti" :class="(messaggio.status == 'received') ? 'received' : '' " v-for="messaggio in contatti[contattoCliccato].messages">
+              <li class="messaggi-ricevuti" :class="(messaggio.status == 'received') ? 'messaggi-ricevuti' : 'messaggi-inviati' " v-for="messaggio in contatti[contattoCliccato].messages">
                 <div>
                     <p>{{messaggio.text}}</p>
                     <span>{{messaggio.date}}</span>
