@@ -31,7 +31,7 @@ header{
 
 .nome-utente,
 .nome-utente-selezionato{
-    background-color: gray;
+    background-color: #eaeaea;
     height: 80px;
 }
 
@@ -41,7 +41,7 @@ header{
 }
 .nome-utente{
     width: 50%;
-    border-right: 1px solid black;
+    border-right: 1px solid #d6d6d6;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -56,10 +56,12 @@ header{
 }
 .utente > span{
     font-size: 20px;
+    margin-left: 10px;
 }
 .icone-nome-utente > i{
-    margin-right: 10px;
+    margin-right: 20px;
     font-size: 25px;
+    color: #b1b1b1;
 }
 /************************
 FINE HEADER DI SINISTRA
@@ -78,15 +80,25 @@ INIZIO HEADER DI DESTRA
 .utente-selezionato{
     display: flex;
     align-items: center;
+    width: 40%;
 }
 .utente-selezionato > img{
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    margin-right: 20px;
 }
 
-info-utente-selezionato{
+.info-utente-selezionato{
     flex-direction: column;
+}
+.info-utente-selezionato > span{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.info-utente-selezionato > p{
+    font-size: 14px;
+    color: #6a7376;
 }
 /************************
 FINE HEADER DI DESTRA
@@ -110,16 +122,15 @@ INIZIO MAIN DI SINISTRA
     display: flex;
     flex-direction: column;
     width: 50%;
-    border-right: 1px solid black;
     min-height: 100px;
-    background-color: lightslategray;
+    background-color: #fafafa;
    
 }
 .ricevi-notifiche{
     display: flex;
     align-items: center;
     width: 100%;
-    background-color: lightskyblue;
+    background-color: #8edafc;
     padding: 10px;
     
 }
@@ -134,14 +145,19 @@ INIZIO MAIN DI SINISTRA
 .cerca-inizia-chat{
     display: flex;
     background-color: white;
-    padding: 10px;
+    padding: 15px;
     margin: 10px;
     border-radius: 5px;
+}
+.cerca-inizia-chat > i{
+    color: #b1b1b1;
+    font-size: 20px;
 }
 .cerca-inizia-chat > input{
     border-style: none;
     width: 100%;
     margin-left: 20px;
+    font-size: 20px;
 }
 
 .listaUtenti{
@@ -154,21 +170,26 @@ INIZIO MAIN DI SINISTRA
 .listaUtenti > li{
     display: flex;
     position: relative;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 10px 20px;
+    background-color: white;
 }
 .listaUtenti > li > img{
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    margin-right: 20px;
+    
 }
 
 .opacita{
     position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    top: 12px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, -0.8);
     z-index: 10;
     width: 19.2%;
-    height: 100%;
+    height: 79%;
     border-radius: 50%;
 }
 
@@ -183,12 +204,13 @@ INIZIO MAIN DI DESTRA
     flex-direction:column;
     justify-content: space-between;
     overflow-y: scroll;
+    height: calc(800px - 80px);
 }
 
 .barra-messaggi{
     height: 100px;
     display: flex;
-    background-color: lavenderblush;
+    background-color: #f3eee9;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -201,6 +223,7 @@ INIZIO MAIN DI DESTRA
 }
 .barra-messaggi > i{
     font-size: 35px;
+    color: #6a7376;
 }
 
 #lista-messaggi{
@@ -210,16 +233,37 @@ INIZIO MAIN DI DESTRA
 }
 
 
-.messaggi-ricevuti{
+.messaggi-inviati{
     align-self: flex-start;
-    background-color: lawngreen;
-    text-align: left;
-    padding: 20px;
-    width: 50%;
+    background-color:white;
+    padding: 20px 20px 5px 20px;
+    min-height: 10px;
+    min-width: 240px;
+    margin-right: 70px;
+    margin-left: 70px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.messaggi-ricevuti:first-child{
+    margin-top: 50px;
 }
 
-.messaggi-inviati{
+.messaggi-ricevuti{
     align-self: flex-end;
-    background-color: white;
-    text-align: right;
+    background-color: #d5f9ba;
+    
+}
+.carateristiche-testo{
+    text-align: left;
+    font-size: 20px;
+}
+
+.contiene-data{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -15px;
+}
+.carateristiche-data{
+    color: #b7b9bb;
+    font-size: 14px;
 }

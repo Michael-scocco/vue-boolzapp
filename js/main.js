@@ -1,3 +1,6 @@
+// contatti[contattoCliccato].messages[index].date;
+
+// let index = contatti[contattoCliccato].messages.length - 1;
 
 const app = new Vue({
     // ELEMENTO //
@@ -8,6 +11,8 @@ const app = new Vue({
         immagineUtente: './img/avatar_io.jpg',
         nomeUtente: 'Nome Utente',
         messaggioUtente: '',
+        trovaPersona:"",
+
 
         contattoCliccato: 0,
         contatti: [
@@ -109,7 +114,7 @@ const app = new Vue({
             // data, text, status
             nuovoMessaggio.date = dayjs().format('DD/MM/YYYY hh:mm:ss');
             nuovoMessaggio.text = this.messaggioUtente;
-            nuovoMessaggio.status = 'messaggi-inviati';//come richiamare le classi css
+            nuovoMessaggio.status = 'sent';//prendo lo stato di invio
             this.contatti[this.contattoCliccato].messages.push(nuovoMessaggio);
             this.messaggioUtente = '';
 
@@ -119,10 +124,24 @@ const app = new Vue({
                 // data, text, status
                 nuovoMessaggioPc.date = dayjs().format('DD/MM/YYYY hh:mm:ss');
                 nuovoMessaggioPc.text = 'ok';
-                nuovoMessaggioPc.status = 'messaggi-rivevuti';//come richiamare le classi css
+                nuovoMessaggioPc.status = 'received';//prendo lo stato di ricevo
                 this.contatti[this.contattoCliccato].messages.push(nuovoMessaggioPc);
             }, 1000);
+           
         },
+        cercaPersona: function(){
+           let singolaPersona = this.trovaPersona.toLowerCase();
+            this.contatti.forEach(contatto => {
+                let singoloNome = contatto.name.toLowerCase();
+                if (singoloNome.includes(singolaPersona)) {
+                    contatto.visible = true;
+                }else{
+                    contatto.visible = false;
+                }
+            });
+        }
+      
+
 
 
     }

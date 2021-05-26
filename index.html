@@ -18,13 +18,14 @@
       <div class="container">
         <header>
           <!-- INIZIO HEADER DI SINISTRA -->
-          <div class="nome-utente">
 
+          <div class="nome-utente">
+            <!-- INIZIO NOME UTENTE ED ICONE-->
             <div class="utente">
               <img v-bind:src="immagineUtente"  alt="avatar mio"/>
               <span>{{nomeUtente}}</span>
             </div>
-            
+    
             <div class="icone-nome-utente">
               <i class="fas fa-circle-notch"></i>
               <i class="fas fa-comment-alt"></i>
@@ -32,20 +33,35 @@
             </div>
            
           </div> <!-- / nome-utente -->
+          <!-- /FINE NOME UTENTE ED ICONE-->
+    
           <!-- / FINE HEADER DI SINISTRA -->
 
           <!-- INIZIO HEADER DI DESTRA -->
+        
+          <!-- INIZIO NOME UTENTE SELEZIONATO DAL CLICK ED ICONE-->
           <div class="nome-utente-selezionato">
 
             <div class="utente-selezionato">
-              <img v-bind:src=" './img' + '/avatar' + contatti[contattoCliccato].avatar + '.jpg'"  alt="avatar selezionato"/>
-
-              <div class="info-utente-selezionato">
-                <span>{{contatti[contattoCliccato].name}}</span>
-                <p>Ultimo accesso oggi alle: {{contatti[contattoCliccato].messages[contatti[contattoCliccato].messages.length-1].date}}</p>
-              </div>
+              <!-- lego la mia immagine con il v-bind, e la compongo con la stringa -->
               
-            </div>
+              <img v-bind:src=" './img' + '/avatar' + contatti[contattoCliccato].avatar + '.jpg'"  alt="avatar selezionato"/> <!-- per cambiare l'immagine del contatto selezionato al click, e quindi di passare da un contatto ad un'altro, devo creare una proprietà, la quale è inizializzata a zero(contattoCliccato = 0), inserita nel data.
+                quindi per prendere l'immagine, devo fare (contatti[contattoCliccato].avatar), significa vai nell'array oggetto chiamato CONTATTI, prendi la posizione in base al click(contattoCliccato), e seleziona l'immagine, data dalla proprietà avatar. -->
+            
+              <div class="info-utente-selezionato">
+               
+                <span>{{contatti[contattoCliccato].name}}</span> <!-- stessa identica cosa la devo fare per lo span, dato che lui tiene il nome dell'utente selezionato, è lo stesso procedimento ma con la proprietà name -->
+                <p>Ultimo accesso oggi alle: {{contatti[contattoCliccato].messages[contatti[contattoCliccato].messages.length-1].date}}</p>
+                <!-- in questo caso è leggermente diverso, perchè la proprietà messages, è un array di oggetti, ed io devo selezionare più i messaggi e tutto l'array di messages, quindi nel richiamo con la doteNotation, devo fare:
+                contatti[contattoCliccato].messages:
+                entra in lista contatti, e con la tua posizione, prendi messages.
+                dopo di che devi dire ke prendi tutto l’array di messaggi facendo -1:
+                [contatti[contattoCliccato].messages.length - 1]
+                si deve mettere tutto nelle quadre, che vuol dire entra in lista contatti, e con la tua posizione, prendi tutto l’array messaggi - 1.
+                poi solo in questa ultima parte prendi data
+                quindi fuori dalle quadre, richiamandolo con il punto-->
+              </div>
+            </div><!-- / utente-selezionato-->
 
             <div class="icone-nome-utente">
               <i class="fas fa-search"></i>
@@ -53,7 +69,9 @@
               <i class="fas fa-ellipsis-v"></i>
             </div>
 
-          </div>
+          </div><!-- / nome-utente-selezionato-->
+          <!-- /FINE NOME UTENTE SELEZIONATO DAL CLICK ED ICONE-->
+
           <!-- /FINE HEADER DI DESTRA -->
         </header>
 
@@ -72,13 +90,16 @@
 
             </div><!-- /ricevi-notifiche -->
 
+          <!-- INIZIO DI CERCA HO INIZIA UNA NUOVA CHAT -->
             <div class="cerca-inizia-chat">
               <i class="fas fa-search"></i>
-              <input type="text" placeholder="Cerca ho inizia una nuova chat">
+              <input v-model="trovaPersona" type="text" @keyup="cercaPersona" placeholder="Cerca ho inizia una nuova chat">
             </div><!-- /cerca-inizia-chat -->
+          <!-- /FINE DI CERCA HO INIZIA UNA NUOVA CHAT -->
+
 
             <ul class="listaUtenti">
-              <li v-for="(contatto, index) in contatti" @click="contattoSelezionato(index)">
+              <li v-for="(contatto, index) in contatti" v-if="contatto.visible == true" @click="contattoSelezionato(index)">
 
                 <img v-bind:src=" './img' + '/avatar' + contatto.avatar + '.jpg' " alt="immagini utenti">
                 <h2>{{contatto.name}}</h2>
@@ -92,24 +113,28 @@
           <!-- inizia main-destra -->
           <div class="main-destra">
             <ul id="lista-messaggi">
-              <li class="messaggi-ricevuti" :class="(messaggio.status == 'received') ? 'messaggi-ricevuti' : 'messaggi-inviati' " v-for="messaggio in contatti[contattoCliccato].messages">
+              <li class="messaggi-inviati" :class="(messaggio.status == 'received') ? 'messaggi-inviati' : 'messaggi-ricevuti' " v-for="messaggio in contatti[contattoCliccato].messages">
                 <div>
-                    <p>{{messaggio.text}}</p>
-                    <span>{{messaggio.date}}</span>
+                    <p class="carateristiche-testo">{{messaggio.text}}</p>
+                    <div class="contiene-data">
+                      <span class="carateristiche-data">{{messaggio.date}}</span>
+                    </div>
+                    
                 </div>
               </li>
             </ul>
-            <div class="barra-messaggi">
-              <i class="far fa-smile"></i>
-              <input v-model="messaggioUtente" @keyup.enter='inserireMessaggi' type="text" placeholder="Scrivi un messaggio">
-              <i class="fas fa-microphone"></i>
-            </div>
-            
-
+          
           </div>
+          
           <!-- /FINE MAIN CENTRALE -->
         </main>
-
+          <footer> 
+            <div class="barra-messaggi">
+            <i class="far fa-smile"></i>
+            <input v-model="messaggioUtente" @keyup.enter='inserireMessaggi' type="text" placeholder="Scrivi un messaggio">
+            <i class="fas fa-microphone"></i>
+          </div>
+        </footer>
       </div>
     </div>
     
